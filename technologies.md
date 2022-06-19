@@ -4,7 +4,7 @@
 Microsoft Excel will be used as an overview of the data. Python and the Pandas library to clean and convert our data.
 
 ## Database Storage 
-We plan on using PostgreSQL, and we will use AWS to display and store our dataset.
+We plan on using PostgreSQL, and we will use AWS to display and store our dataset. We will also use Google Colab with PySpark to load the data from the AWS bucket to PostgreSQL.
 
 
 ## Machine Learning 

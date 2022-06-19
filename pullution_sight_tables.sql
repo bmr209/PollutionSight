@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS us_pollution_2000_2016 CASCADE;
-CREATE TABLE "us_pollution" (
+CREATE TABLE "us_pollution_2000_2016" (
     "local_date" DATE   NOT NULL,
     "city" VARCHAR(30)   NOT NULL,
     "county" VARCHAR(30)   NOT NULL,

@@ -1,9 +1,5 @@
 DROP TABLE IF EXISTS us_pollution_2000_2016 CASCADE;
-DROP TABLE IF EXISTS wildfire_locations CASCADE;
-DROP TABLE IF EXISTS census_data_2000s CASCADE;
-DROP TABLE IF EXISTS census_data_2010s CASCADE;
-
-CREATE TABLE "us_pollution_2000_2016" (
+CREATE TABLE "us_pollution" (
     "local_date" DATE   NOT NULL,
     "city" VARCHAR(30)   NOT NULL,
     "county" VARCHAR(30)   NOT NULL,

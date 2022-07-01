@@ -31,12 +31,20 @@ let map = L.map('mapid', {
 let nov20Pollution = new L.LayerGroup();
 let feb21Pollution = new L.LayerGroup();
 let may21Pollution = new L.LayerGroup();
+let aug21Pollution = new L.LayerGroup();
+let nov21Pollution = new L.LayerGroup();
+let feb22Pollution = new L.LayerGroup();
+let may22Pollution = new L.LayerGroup();
 
 // Adding a reference to the overlays object.
 let overlays = {
   "November 27, 2020": nov20Pollution,
   "February 27, 2021": feb21Pollution,
-  "May 27, 2021": may21Pollution
+  "May 27, 2021": may21Pollution,
+  "August 27, 2021": aug21Pollution,
+  "November 27, 2021": nov21Pollution,
+  "February 27, 2022": feb22Pollution,
+  "May 27, 2022": may22Pollution
 };
 
 // Adding a control to the map to allow user to select map
@@ -345,4 +353,174 @@ fetch("././api_may_27_2021.json")
             };
           };
           may21Pollution.addTo(map)
+    });
+
+
+// Adding August 27, 2021 json
+fetch("././api_aug_27_2021.json")
+    .then(function(response) {
+      return response.json()
+    })
+//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+    .then (function(data) {
+
+          for (let i = 0; i < 11; i++) {
+
+            for (let j = 0; j < 11; j++) {
+
+              function getColor(aqi){
+                if (data[i].list[4].main.aqi === 1){
+                  return "#3cb371";
+                }
+                if (data[i].list[4].main.aqi === 2){
+                    return "#00ff00";
+                }
+                if (data[i].list[4].main.aqi === 3){
+                    return "#ffff00";
+                }
+                if (data[i].list[4].main.aqi === 4){
+                    return "#ffa500";
+                }
+                else
+                    return "#ff0000";
+              }
+
+              L.circleMarker([data[i].coord.lat, data[i].coord.lon], {
+              
+                fillColor: getColor(data[i].list[4].main.aqi),
+                color: getColor(data[i].list[4].main.aqi)
+
+              })
+              .bindPopup("<h2>" + data[11].city[i] + ", " + data[11].state[i] + "<hr> CAQI: " + data[i].list[4].main.aqi + " </h2> <hr> In μg/m3: <h3> CO: " + data[i].list[4].components.co + "<hr> NO: " + data[i].list[4].components.no + "<hr> O3: " + data[i].list[4].components.o3 + "<hr> SO2: " + data[i].list[4].components.so2 + "</h3>")
+              .addTo(aug21Pollution);
+            };
+          };
+          aug21Pollution.addTo(map)
+    });
+
+
+// Adding November 27, 2021 json
+fetch("././api_nov_27_2021.json")
+    .then(function(response) {
+      return response.json()
+    })
+//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+    .then (function(data) {
+
+          for (let i = 0; i < 11; i++) {
+
+            for (let j = 0; j < 11; j++) {
+
+              function getColor(aqi){
+                if (data[i].list[4].main.aqi === 1){
+                  return "#3cb371";
+                }
+                if (data[i].list[4].main.aqi === 2){
+                    return "#00ff00";
+                }
+                if (data[i].list[4].main.aqi === 3){
+                    return "#ffff00";
+                }
+                if (data[i].list[4].main.aqi === 4){
+                    return "#ffa500";
+                }
+                else
+                    return "#ff0000";
+              }
+
+              L.circleMarker([data[i].coord.lat, data[i].coord.lon], {
+              
+                fillColor: getColor(data[i].list[4].main.aqi),
+                color: getColor(data[i].list[4].main.aqi)
+
+              })
+              .bindPopup("<h2>" + data[11].city[i] + ", " + data[11].state[i] + "<hr> CAQI: " + data[i].list[4].main.aqi + " </h2> <hr> In μg/m3: <h3> CO: " + data[i].list[4].components.co + "<hr> NO: " + data[i].list[4].components.no + "<hr> O3: " + data[i].list[4].components.o3 + "<hr> SO2: " + data[i].list[4].components.so2 + "</h3>")
+              .addTo(nov21Pollution);
+            };
+          };
+          nov21Pollution.addTo(map)
+    });
+
+// Adding February 27, 2022 json
+fetch("././api_feb_27_2022.json")
+    .then(function(response) {
+      return response.json()
+    })
+//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+    .then (function(data) {
+
+          for (let i = 0; i < 11; i++) {
+
+            for (let j = 0; j < 11; j++) {
+
+              function getColor(aqi){
+                if (data[i].list[4].main.aqi === 1){
+                  return "#3cb371";
+                }
+                if (data[i].list[4].main.aqi === 2){
+                    return "#00ff00";
+                }
+                if (data[i].list[4].main.aqi === 3){
+                    return "#ffff00";
+                }
+                if (data[i].list[4].main.aqi === 4){
+                    return "#ffa500";
+                }
+                else
+                    return "#ff0000";
+              }
+
+              L.circleMarker([data[i].coord.lat, data[i].coord.lon], {
+              
+                fillColor: getColor(data[i].list[4].main.aqi),
+                color: getColor(data[i].list[4].main.aqi)
+
+              })
+              .bindPopup("<h2>" + data[11].city[i] + ", " + data[11].state[i] + "<hr> CAQI: " + data[i].list[4].main.aqi + " </h2> <hr> In μg/m3: <h3> CO: " + data[i].list[4].components.co + "<hr> NO: " + data[i].list[4].components.no + "<hr> O3: " + data[i].list[4].components.o3 + "<hr> SO2: " + data[i].list[4].components.so2 + "</h3>")
+              .addTo(feb22Pollution);
+            };
+          };
+          feb22Pollution.addTo(map)
+    });
+
+// Adding May 27, 2022 json
+fetch("././api_may_27_2022.json")
+    .then(function(response) {
+      return response.json()
+    })
+//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+    .then (function(data) {
+
+          for (let i = 0; i < 11; i++) {
+
+            for (let j = 0; j < 11; j++) {
+
+              function getColor(aqi){
+                if (data[i].list[4].main.aqi === 1){
+                  return "#3cb371";
+                }
+                if (data[i].list[4].main.aqi === 2){
+                    return "#00ff00";
+                }
+                if (data[i].list[4].main.aqi === 3){
+                    return "#ffff00";
+                }
+                if (data[i].list[4].main.aqi === 4){
+                    return "#ffa500";
+                }
+                else
+                    return "#ff0000";
+              }
+
+              L.circleMarker([data[i].coord.lat, data[i].coord.lon], {
+              
+                fillColor: getColor(data[i].list[4].main.aqi),
+                color: getColor(data[i].list[4].main.aqi)
+
+              })
+              .bindPopup("<h2>" + data[11].city[i] + ", " + data[11].state[i] + "<hr> CAQI: " + data[i].list[4].main.aqi + " </h2> <hr> In μg/m3: <h3> CO: " + data[i].list[4].components.co + "<hr> NO: " + data[i].list[4].components.no + "<hr> O3: " + data[i].list[4].components.o3 + "<hr> SO2: " + data[i].list[4].components.so2 + "</h3>")
+              .addTo(may22Pollution);
+            };
+          };
+          may22Pollution.addTo(map)
     });

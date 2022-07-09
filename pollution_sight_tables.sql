@@ -54,3 +54,9 @@ CREATE TABLE "census_data_2010s" (
     "POPESTIMATE2018" INT   NOT NULL,
     "POPESTIMATE2019" INT   NOT NULL
 );
+
+ALTER TABLE "census_data_2000s" ADD CONSTRAINT "fk_census_data_2000s_NAME_STNAME" FOREIGN KEY("NAME", "STNAME")
+REFERENCES "us_pollution" ("city", "usstate");
+
+ALTER TABLE "census_data_2010s" ADD CONSTRAINT "fk_census_data_2010s_NAME_STNAME" FOREIGN KEY("NAME", "STNAME")
+REFERENCES "census_data_2000s" ("NAME", "STNAME");

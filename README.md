@@ -5,7 +5,6 @@ At PollutionSight, our goal is to keep an eye on pollution with a look toward th
  2) Project Goals
  3) The Team
  4) Tolls Used
- 5) Data Cleaning, Organization, Storage, and Usage
 ## Why, What, and When
 ### Why analyze pollution?
 Outdoor air pollution is one of the biggest environmental problems in the world. Possibly because it is not necessarily a visible concern and the health effects aren't usually immediate, it is an issue that only some countries have begun to take seriously. However, there is increasing evidence that exposure to pollution leads to negative health outcomes. In 2019 alone, outdoor air pollution was one of the leading risk factors for deaths in the United States:
@@ -63,14 +62,6 @@ These were the programs used to create our visualizations and dashboard
 * Tableau
     > Used to create state and city statistics
  
-## Data Cleaning, Organization, Storage, and Usage
-This section explains everything you need to know about how we processed our data.
-### Cleaning
-To start things off, we noticed our data was not ready to be processed. We first needed to remove spaces from columns, drop null rows and update date variables from string to datetime. These changes can be found on fill "Pollution_Sight_Initial_Cleaning.ipynb". This only covered our Pollution Data.
- 
-Census Data did not need any initial cleaning although we did need to **Combine the data from the two seperate decade which you can find in "combine_census_data.sql"**
- 
-### Organization
 
 
 

@@ -25,14 +25,6 @@ CREATE TABLE "us_pollution" (
     "coaqi" INT   NOT NULL
 );
 
-CREATE TABLE "wildfire_locations" (
-    "InitialLatitude" INT   NOT NULL,
-    "InitialLongitude" INT   NOT NULL,
-    "FireDiscoveryDateTime" DATE   NOT NULL,
-    "ContainmentDateTime" DATE   NOT NULL,
-    "DailyAcres" INT   NOT NULL
-);
-
 CREATE TABLE "census_data_2000s" (
     "NAME" VARCHAR   NOT NULL,
     "STNAME" VARCHAR   NOT NULL,

@@ -1,9 +1,8 @@
 DROP TABLE IF EXISTS us_pollution_2000_2016 CASCADE;
-DROP TABLE IF EXISTS wildfire_locations CASCADE;
-DROP TABLE IF EXISTS census_data_2000s CASCADE;
-DROP TABLE IF EXISTS census_data_2010s CASCADE;
-
-CREATE TABLE "us_pollution_2000_2016" (
+CREATE TABLE "us_pollution" (
+    "usstate" VARCHAR   NOT NULL,
+    "county" VARCHAR   NOT NULL,
+    "city" VARCHAR   NOT NULL,
     "local_date" DATE   NOT NULL,
     "city" VARCHAR   NOT NULL,
     "county" VARCHAR   NOT NULL,
@@ -24,14 +23,6 @@ CREATE TABLE "us_pollution_2000_2016" (
     "comaxvalue" INT   NOT NULL,
     "comaxhour" INT   NOT NULL,
     "coaqi" INT   NOT NULL
-);
-
-CREATE TABLE "wildfire_locations" (
-    "InitialLatitude" INT   NOT NULL,
-    "InitialLongitude" INT   NOT NULL,
-    "FireDiscoveryDateTime" DATE   NOT NULL,
-    "ContainmentDateTime" DATE   NOT NULL,
-    "DailyAcres" INT   NOT NULL
 );
 
 CREATE TABLE "census_data_2000s" (
@@ -63,10 +54,3 @@ CREATE TABLE "census_data_2010s" (
     "POPESTIMATE2018" INT   NOT NULL,
     "POPESTIMATE2019" INT   NOT NULL
 );
-
-ALTER TABLE "census_data_2000s" ADD CONSTRAINT "fk_census_data_2000s_NAME_STNAME" FOREIGN KEY("NAME", "STNAME")
-REFERENCES "us_pollution" ("city", "usstate");
-
-ALTER TABLE "census_data_2010s" ADD CONSTRAINT "fk_census_data_2010s_NAME_STNAME" FOREIGN KEY("NAME", "STNAME")
-REFERENCES "census_data_2000s" ("NAME", "STNAME");
-

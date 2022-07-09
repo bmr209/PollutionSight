@@ -5,6 +5,7 @@ At PollutionSight, our goal is to keep an eye on pollution with a look toward th
  2) Project Goals
  3) The Team
  4) Tolls Used
+ 5) Presentation and Dashboard
 ## Why, What, and When
 ### Why analyze pollution?
 Outdoor air pollution is one of the biggest environmental problems in the world. Possibly because it is not necessarily a visible concern and the health effects aren't usually immediate, it is an issue that only some countries have begun to take seriously. However, there is increasing evidence that exposure to pollution leads to negative health outcomes. In 2019 alone, outdoor air pollution was one of the leading risk factors for deaths in the United States:
@@ -62,7 +63,9 @@ These were the programs used to create our visualizations and dashboard
 * Tableau
     > Used to create state and city statistics
  
+## Presentation and Dashboard
 
+[Presentation](https://docs.google.com/presentation/d/1-q1f62aT4ipLGKyN-nhjjkpQ-auFi5T6wycMF4iLf2Y/edit?usp=sharing)
 
 
 

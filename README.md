@@ -55,7 +55,7 @@ These were the programs used to clean and organize our data:
 ### Database
 This program was used to store our data:
 * AWS
-    >
+    >used to store our data
  
 ### Data Visualization
 These were the programs used to create our visualizations and dashboard

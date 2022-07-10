@@ -69,8 +69,7 @@ These were the programs used to create our visualizations and dashboard
 [Presentation](https://docs.google.com/presentation/d/1-q1f62aT4ipLGKyN-nhjjkpQ-auFi5T6wycMF4iLf2Y/edit?usp=sharing)
 
 
-## Data Visuals
-# Data Visualizations 
+## Data Visualizations 
 
 [Yearly City Population](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyCityPopulationvsPollution/YearlyCityPopulationvsPollution)
 

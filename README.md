@@ -75,5 +75,5 @@ These were the programs used to create our visualizations and dashboard
 
 [Yearly Top Polluting States](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyTopPollutingStates/YearlyTopPollutingStates)
 
-[Yearly Pollution Maps](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyTopPollutingStates/YearlyPollutionMaps?publish=yes)
+[Yearly Pollution Maps](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyPollutionStats/YearlyPollutionMaps?publish=yes)
 

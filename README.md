@@ -1,13 +1,17 @@
 # PollutionSight
+
 At PollutionSight, our goal is to keep an eye on pollution with a look toward the future. We will analyze air pollution data from the United States from the years 2000 to 2016 to identify and visualize patterns and then create a machine learning model to predict future pollutant levels in specific cities.
+
 ## Project Overview
  1) Why, What, and When
  2) Project Goals
  3) The Team
- 4) Tolls Used
+ 4) Tools Used
  5) Presentation and Dashboard
  6) Data Visuals
+
 ## Why, What, and When
+
 ### Why analyze pollution?
 Outdoor air pollution is one of the biggest environmental problems in the world. Possibly because it is not necessarily a visible concern and the health effects aren't usually immediate, it is an issue that only some countries have begun to take seriously. However, there is increasing evidence that exposure to pollution leads to negative health outcomes. In 2019 alone, outdoor air pollution was one of the leading risk factors for deaths in the United States:
  
@@ -27,6 +31,7 @@ With our analysis, we hope to answer some important questions about pollution in
 * What effect does geography have on pollution?
  
 ## The Team
+
 ### Task Management
 Our team split tasks as follow:
 * Person 1 - Machine Learning - Data Cleaning
@@ -38,7 +43,8 @@ Our team split tasks as follow:
 * Person 4 - Data Cleaning - SQL - Population and Geography (City)
     * The fourth individual worked on data cleaning and prepping before it was moved to our database, combined and filtered data in SQL, and created city level pollution visuals.
 
-## Tolls Used
+## Tools Used
+
 ### Communication
 These were the programs used for communication:
 * Slack
@@ -98,4 +104,3 @@ These were the programs used to create our visualizations and dashboard
 [Yearly Top Polluting States](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyTopPollutingStates/YearlyTopPollutingStates)
 
 [Yearly Pollution Maps(Cities)](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyPollutionStats/YearlyPollutionMaps?publish=yes)
-

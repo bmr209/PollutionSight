@@ -46,6 +46,8 @@ These were the programs used for communication:
     > Used to communicate during off hours
 * Zoom
     > Used during meetings
+* Google Calendar
+    > Booking meetings
  
 ### Data Cleaning and Organizing
 These were the programs used to clean and organize our data:
@@ -57,14 +59,35 @@ These were the programs used to clean and organize our data:
 ### Database
 This program was used to store our data:
 * AWS
-    >used to store our data
+    > Used to store our data
+* Google Colab
+    > Import data into AWS
+* SQL
+    > View and update data in AWS
  
 ### Data Visualization
 These were the programs used to create our visualizations and dashboard
 * Tableau
     > Used to create state and city statistics
+* JavaScript
+    > Used to create global data
+* HTML
+    > Used to create dashboard and but things together
  
 ## Presentation and Dashboard
+**Presentation Outline**
+* Why?
+ * What was our reasoning behind this topic
+* Data Source
+ * Where did we obtain our data from. 
+* Database and Tools
+ * What tools did we use to help us in this project? 
+* Machine Learning
+ * What model did we use and what did we learn?
+* Dashboard Overview
+ * Exloring our dashboard and explaining what we did
+* Thoughts and Questions 
+ * Things we could have done better. Q and A.  
 
 [Presentation](https://docs.google.com/presentation/d/1-q1f62aT4ipLGKyN-nhjjkpQ-auFi5T6wycMF4iLf2Y/edit?usp=sharing)
 

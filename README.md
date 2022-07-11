@@ -46,7 +46,7 @@ Our team split tasks as follow:
 ### Communication Protocol
 When it comes to communication we meet 3-4 times a week. During Tuesday, Thursday, Saturday, and Sunday. Between those time frames we primarily communicate via slack.
 
-## Tolls Used
+## To0ls Used
 
 ### Communication
 These were the programs used for communication:

@@ -71,7 +71,7 @@ These were the programs used to create our visualizations and dashboard
 
 ## Data Visualizations 
 
-[Yearly City Population](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyCityPopulationvsPollution/YearlyCityPopulationvsPollution)
+[Yearly City Population](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyTopPollutingStates/CityNO2MaxValuesvsPopulationperYear?publish=yes)
 
 [Yearly Top Polluting States](https://public.tableau.com/app/profile/jahid.miah/viz/YearlyTopPollutingStates/YearlyTopPollutingStates)
 

@@ -43,9 +43,6 @@ Our team split tasks as follow:
 * Person 4 - Data Cleaning - SQL - Population and Geography (City)
     * The fourth individual worked on data cleaning and prepping before it was moved to our database, combined and filtered data in SQL, and created city level pollution visuals.
 
-### Communication Protocol
-When it comes to communication we meet 3-4 times a week. During Tuesday, Thursday, Saturday, and Sunday. Between those time frames we primarily communicate via slack.
-
 ## Tools Used
 
 ### Communication

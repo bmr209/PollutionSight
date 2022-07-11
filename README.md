@@ -77,17 +77,17 @@ These were the programs used to create our visualizations and dashboard
 ## Presentation and Dashboard
 **Presentation Outline**
 * Why?
- * What was our reasoning behind this topic
+   * What was our reasoning behind this topic
 * Data Source
- * Where did we obtain our data from. 
+   * Where did we obtain our data from. 
 * Database and Tools
- * What tools did we use to help us in this project? 
+   * What tools did we use to help us in this project? 
 * Machine Learning
- * What model did we use and what did we learn?
+   * What model did we use and what did we learn?
 * Dashboard Overview
- * Exloring our dashboard and explaining what we did
+   * Exploring our dashboard and explaining what we did
 * Thoughts and Questions 
- * Things we could have done better. Q and A.  
+   * Things we could have done better. Q and A. 
 
 [Presentation](https://docs.google.com/presentation/d/1-q1f62aT4ipLGKyN-nhjjkpQ-auFi5T6wycMF4iLf2Y/edit?usp=sharing)
 

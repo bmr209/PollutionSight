@@ -146,11 +146,11 @@ let cities = [{
 //      return next((val['city'] for val in array_data if val['location'][0] == match_value1 and val['location'][1] == match_value2), "NaN")
 
 
-fetch("././api_nov_27_2020.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_nov_27_2020.json")
+// fetch("././api_nov_27_2020.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_nov_27_2020.json")
     .then (function(data) {
         //cities.forEach(function(city){
           //console.log(city)
@@ -232,11 +232,11 @@ fetch("././api_nov_27_2020.json")
 //     });
 // });
 
-fetch("././api_feb_27_2021.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_feb_27_2021.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
     .then (function(data) {
       // function mapperCity (array_data, match_value1, match_value2) {
       //   return next([val['city'] for val in array_data if val['location'][0] === match_value1 and val['location'][1] === match_value2), "NaN"]
@@ -291,8 +291,9 @@ let legend = L.control({
 // Adding the details for the legend
 legend.onAdd = function() {
   let div = L.DomUtil.create("div", "info legend");
+    labels = ['<strong>Air Quality</strong>'];
 
-  const caqi = [1, 2, 3, 4, 5];
+  const caqi = ["1: Very Good", "2: Good", "3: Moderate", "4: Unhealthy", "5: Very Unhealthy"];
   const colors = [
     "#3cb371",
     "#00ff00",
@@ -314,11 +315,11 @@ legend.onAdd = function() {
 legend.addTo(map);
 
 // Adding May 27, 2021 json
-fetch("././api_may_27_2021.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_may_27_2021.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_may_27_2021.json")
     .then (function(data) {
 
           for (let i = 0; i < 11; i++) {
@@ -357,11 +358,11 @@ fetch("././api_may_27_2021.json")
 
 
 // Adding August 27, 2021 json
-fetch("././api_aug_27_2021.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_aug_27_2021.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_aug_27_2021.json")
     .then (function(data) {
 
           for (let i = 0; i < 11; i++) {
@@ -400,11 +401,11 @@ fetch("././api_aug_27_2021.json")
 
 
 // Adding November 27, 2021 json
-fetch("././api_nov_27_2021.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_nov_27_2021.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_nov_27_2021.json")
     .then (function(data) {
 
           for (let i = 0; i < 11; i++) {
@@ -442,11 +443,11 @@ fetch("././api_nov_27_2021.json")
     });
 
 // Adding February 27, 2022 json
-fetch("././api_feb_27_2022.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_feb_27_2022.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2022.json")
     .then (function(data) {
 
           for (let i = 0; i < 11; i++) {
@@ -484,11 +485,11 @@ fetch("././api_feb_27_2022.json")
     });
 
 // Adding May 27, 2022 json
-fetch("././api_may_27_2022.json")
-    .then(function(response) {
-      return response.json()
-    })
-//d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_feb_27_2021.json")
+// fetch("././api_may_27_2022.json")
+//     .then(function(response) {
+//       return response.json()
+//     })
+d3.json("https://raw.githubusercontent.com/bmr209/PollutionSight/brian_rincon/api_may_27_2022.json")
     .then (function(data) {
 
           for (let i = 0; i < 11; i++) {

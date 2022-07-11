@@ -37,8 +37,7 @@ Our team split tasks as follow:
     * The third individual helped create the dashboard and organize team meetings. In addition to that they helped create country wide year over year map visuals.
 * Person 4 - Data Cleaning - SQL - Population and Geography (City)
     * The fourth individual worked on data cleaning and prepping before it was moved to our database, combined and filtered data in SQL, and created city level pollution visuals.
-### Communication Protocol
-When it comes to communication we meet 3-4 times a week. During Tuesday, Thursday, Saturday, and Sunday. Between those time frames we primarily communicate via slack.
+
 ## Tolls Used
 ### Communication
 These were the programs used for communication:

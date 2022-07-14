@@ -96,6 +96,8 @@ These were the programs used to create our visualizations and dashboard
 
 [Presentation](https://docs.google.com/presentation/d/1-q1f62aT4ipLGKyN-nhjjkpQ-auFi5T6wycMF4iLf2Y/edit?usp=sharing)
 
+[Dashboard] (https://vikashnin.github.io/PollutionSight-Dashboard/)
+
 
 ## Data Visualizations 
 

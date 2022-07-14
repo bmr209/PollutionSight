@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>World Air Pollution</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+	#btn-spin {
+		font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		background-color: rgb(0,153,153);
+		color: #fff;
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		z-index: 1;
+		border: none;
+		width: 200px;
+		margin-left: -100px;
+		display: block;
+		cursor: pointer;
+		padding: 10px 20px;
+		border-radius: 3px;
+	}
+		#btn-spin:hover {
+			background-color: rgb(0,204,204);
+	}
+</style>
+
+<div id="map"></div>
+<button id="btn-spin">Pause rotation</button>
+
+<script>
+	// Adding access token
+	mapboxgl.accessToken = API_KEY;
+
+	const map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/navigation-night-v1',
+		zoom: 3.75,
+		center: [-100, 40],
+		projection: 'globe'
+	});
+ 
+	map.on('style.load', () => {
+		// Setting the default atmosphere style
+		map.setFog({});
+	});
+ 
+	// Complete a revolution every two minutes
+	const secondsPerRevolution = 120;
+	// Do not rotate if the zoom level is above 5
+	const maxSpinZoom = 5;
+	// Rotate slower between zoom levels 3 and 5
+	const slowSpinZoom = 3;
+ 
+	let userInteracting = false;
+	let spinEnabled = true;
+ 
+	function spinGlobe() {
+		const zoom = map.getZoom();
+		if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
+			let distancePerSecond = 360 / secondsPerRevolution;
+			if (zoom > slowSpinZoom) {
+				// Spins slower at higher zooms
+				const zoomDif =
+				(maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
+				distancePerSecond *= zoomDif;
+			}
+			const center = map.getCenter();
+			center.lng -= distancePerSecond;
+			
+			// When the animation is complete, it calls a 'moveend' event
+			map.easeTo({ center, duration: 1000, easing: (n) => n });
+		}
+	}
+ 
+	// No spinning on interaction
+	map.on('mousedown', () => {
+		userInteracting = true;
+	});
+ 
+	// Spinning restarts when interaction is complete
+	map.on('mouseup', () => {
+		userInteracting = false;
+		spinGlobe();
+	});
+ 
+	map.on('dragend', () => {
+		userInteracting = false;
+		spinGlobe();
+	});
+
+	map.on('pitchend', () => {
+		userInteracting = false;
+		spinGlobe();
+	});
+
+	map.on('rotateend', () => {
+		userInteracting = false;
+		spinGlobe();
+	});
+	
+	// Re-start spinning if there is no interaction
+	map.on('moveend', () => {
+		spinGlobe();
+	});
+ 
+	document.getElementById('btn-spin').addEventListener('click', (e) => {
+		spinEnabled = !spinEnabled;
+		if (spinEnabled) {
+			spinGlobe();
+			e.target.innerHTML = 'Pause rotation';
+		} else {
+			map.stop();
+			e.target.innerHTML = 'Start rotation';
+		}
+	});
+ 
+	spinGlobe();
+
+	map.on('load', () => {
+		// Adding the geojson source
+		map.addSource('pollution', {
+			'type': 'geojson',
+			'data': 'https://pollution-sight-data.s3.us-west-1.amazonaws.com/openaq.geojson'
+		});
+
+		map.addLayer({
+			'id': 'pollution-heat',
+			'type': 'heatmap',
+			'source': 'pollution',
+			'maxzoom': 10,
+			'paint': {
+				// Increasing the heatmap weight based on the measurements value
+				'heatmap-weight': [
+					'interpolate',
+					['linear'],
+					['get', 'measurements_value'],
+					0,
+					0,
+					6,
+					1
+				],
+				// Increasing the heatmap color weight by zoom level
+				'heatmap-intensity': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					0,
+					1,
+					9,
+					3
+				],
+				// Color for the heatmap
+				'heatmap-color': [
+					'interpolate',
+					['linear'],
+					['heatmap-density'],
+					0,
+					'rgba(0,153,76,0)',
+					0.1,
+					'rgb(0,204,102)',
+					0.2,
+					'rgb(0,255,128)',
+					0.3,
+					'rgb(102,255,178)',
+					0.4,
+					'rgb(153,255,204)',
+					0.5,
+					'rgb(204,255,255)',
+					0.6,
+					'rgb(153,255,255)',
+					0.7,
+					'rgb(102,255,255)',
+					0.8,
+					'rgb(0,255,255)',
+					0.9,
+					'rgb(0,204,204)',
+					1,
+					'rgb(0,153,153)'
+				],
+				// Adjusting the heatmap radius by zoom level
+				'heatmap-radius': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					0,
+					2,
+					9,
+					20
+				],
+				// Transitioning from heatmap to circle layer by zoom level
+				'heatmap-opacity': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					7,
+					1,
+					9,
+					0
+					]
+				}
+			},
+			'waterway-label'
+		);
+			
+		map.addLayer(
+				{
+				'id': 'pollution-point',
+				'type': 'circle',
+				'source': 'pollution',
+				'minzoom': 6,
+				'paint': {
+					// Sizing circle radius by measurements value and zoom level
+					'circle-radius': [
+						'interpolate',
+						['linear'],
+						['zoom'],
+						7,
+						['interpolate', ['linear'], ['get', 'measurements_value'], 1, 1, 6, 4],
+						16,
+						['interpolate', ['linear'], ['get', 'measurements_value'], 1, 5, 6, 50]
+						],
+					// Coloring circle by measurements value
+						'circle-color': [
+							'interpolate',
+							['linear'],
+							['get', 'measurements_value'],
+							1,
+							'rgba(0,153,76,0)',
+							2,
+							'rgb(0,255,128)',
+							3,
+							'rgb(153,255,204)',
+							4,
+							'rgb(153,255,255)',
+							5,
+							'rgb(0,255,255)',
+							6,
+							'rgb(0,153,153)'
+						],
+						'circle-stroke-color': 'white',
+						'circle-stroke-width': 1,
+						// Transitioning from heatmap to circle layer by zoom level
+						'circle-opacity': [
+							'interpolate',
+							['linear'],
+							['zoom'],
+							7,
+							0,
+							8,
+							1
+						]
+					}
+				},
+				'waterway-label'
+		);
+	});
+
+	// Adding pop up markers with the pollution data
+	map.on('click', 'pollution-point', (event) => {
+		new mapboxgl.Popup()
+		.setLngLat(event.features[0].geometry.coordinates)
+		.setHTML(`<strong>${event.features[0].properties.measurements_parameter}:</strong> ${event.features[0].properties.measurements_value} ${event.features[0].properties.measurements_unit}`)
+		.addTo(map);
+	});
+
+</script>
+
+</body>
+</html>
